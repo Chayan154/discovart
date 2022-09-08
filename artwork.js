@@ -14,7 +14,9 @@ async function getArtworkData(param) {
 async function showArtwork(param) {
     const data = await getArtworkData(param);
     document.title = data.title;
-    return `<h1>${data.title}</h1>`;
+    return `<h1>${data.title}</h1>
+            <img src='${data.primaryImage}' width='80%'/>
+                                `;
 }
 
 // contentBox.innerHTML = await showArtwork(myParam);
