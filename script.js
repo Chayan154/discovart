@@ -19,6 +19,9 @@ function presentResults(data) {
     let result = '';
     let results = data['objectIDs'].map((e) => {
         let href = `/artwork.html?objectID=${e}`;
+        if (!window.location.pathname.includes('index.html')) {
+            href = window.location.pathname + href;
+        }
         return `<a href='${href}' target='_blank'>${e}</a>`;
     });
     for (const i of results) {
